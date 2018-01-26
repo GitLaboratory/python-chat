@@ -107,8 +107,8 @@ def api():
                 return close_client(e)
                 
             now = datetime.now().strftime("%m-%d %H:%M:%S")
-            body = unicode(body, encoding='utf-8')
-            print u'[%r, %r]: %s' % (cid, ws_id, body)
+            body = body.encode("UTF-8")
+            print u'[%r, %r]: %s'.encode("UTF-8") % (cid, ws_id, body)
             message = {
                 'cid': cid,
                 'type': 'message',
